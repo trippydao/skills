@@ -16,6 +16,7 @@ This fork is the flavor layer. Every deliberate divergence from upstream is list
 |---|-----------|-------|-----|
 | 1 | Tracker setup pointer rewritten: `tell the user to run /setup-matt-pocock-skills` → `default to the local-markdown tracker and tell the user to configure one (see setup-matt-pocock-skills)` | `skills/engineering/code-review/SKILL.md`, `to-spec`, `to-tickets`, `wayfinder`, `triage` | Hermes stack runs its own tracker convention (GitHub Issues + kanban via gh CLI); the setup skill's Claude-Code-specific flow is a fallback, not the default. |
 | 2 | `productivity/grill-me` and `productivity/handoff` are ours, not upstream's | `skills/productivity/grill-me/`, `skills/productivity/handoff/` | Both are heavily flavored for the Hermes stack (grill-me: check-the-system-before-asking loop, execution-phase tracking; handoff: multi-surface Mike/Honcho, no-doc pickup, redaction). Upstream versions are thinner generics. On merge conflicts here, **ours wins** — do not take upstream. |
+| 3 | New skill `constitution` (constitution-first SDD loop; ours, not upstream's) + ask-matt main-flow step 0 pointing at it | `skills/engineering/constitution/` (new), `skills/engineering/ask-matt/SKILL.md` | Project-level spec layer (mission/stack/roadmap) from the DeepLearning.AI SDD course; upstream's flow is feature-scoped only. On merge conflicts in ask-matt step 0 or the constitution skill, **ours wins**. |
 
 ## Non-adaptations (deliberately not adopted)
 
