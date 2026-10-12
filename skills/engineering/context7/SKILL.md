@@ -1,6 +1,13 @@
 ---
 name: context7
 version: 1.0.0
+author: Mike (Mycroft Holmes) for trippydao
+license: MIT
+platforms: [linux]
+metadata:
+  hermes:
+    tags: [docs, cli, context7, agents]
+    related_skills: [grilling, grill-with-docs, to-spec, constitution]
 description: Use when code answers hinge on library APIs or versions.
 ---
 
@@ -16,19 +23,14 @@ The `ctx7` CLI + this skill replace the Context7 MCP server (CLI+skill pattern �
 ## Flow
 
 1. Resolve the library:
-
    ```
    bunx ctx7 library <name>
    ```
-
    Pick the `/org/repo` ID with high Source Reputation and the version range matching the project's pin.
-
 2. Query it:
-
    ```
    bunx ctx7 docs <library-id> "<specific question>"
    ```
-
 3. Cite what you got. If docs contradict the plan, surface it — do not silently reconcile.
 
 ## Auth
@@ -37,6 +39,7 @@ Anonymous use works (rate-limited). `ctx7 whoami` checks status; `ctx7 login` is
 
 ## Pitfalls
 
+- The npm package is `ctx7` — nothing else. `@upstash/context7-cli` 404s and `context7` is an unrelated package; a wrong name fails as a clean registry 404 after dependency resolution, so read the error before suspecting the network.
 - Do not use it for our own repos' internals — vault, mike-infra, fork skills. It serves upstream public docs only.
 - Docs are current upstream; our pinned versions may differ. Match the version when picking the library ID.
 - Query one specific question per call. Do not dump whole doc trees into context.
